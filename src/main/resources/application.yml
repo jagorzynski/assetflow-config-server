@@ -6,7 +6,7 @@ spring:
       server:
         git:
           uri: ${SPRING_CLOUD_CONFIG_SERVER_GIT_URI:https://github.com/jagorzynski/assetflow-config-repo}
-          default-label: master
+          default-label: main
           timeout: 5
           clone-on-start: true
           force-pull: true
