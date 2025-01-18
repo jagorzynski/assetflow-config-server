@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: assetflow-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${SPRING_CLOUD_CONFIG_SERVER_GIT_URI:https://github.com/jagorzynski/assetflow-config-repo}
+          default-label: master
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
+          username: ${GITHUB_USER}
+          password: ${GITHUB_TOKEN}
+
+server:
+  port: 8888
+  tomcat:
+    connection-timeout: 2s
+    keep-alive-timeout: 15s
+    threads:
+      max: 50
+      min-spare: 5
